@@ -49,7 +49,7 @@ auto eigh(ContextInternal& ctx, T wl, ConstDeviceView<api::ComplexType<T>, 2> s,
     for (std::size_t row = col; row < s.shape(0); ++row) {
       const auto val = sHost[{row, col}];
         if (std::abs(val.x) >= std::numeric_limits<T>::epsilon() ||
-          std::abs(val.y) >= std::numeric_limits<T>::epsilon()) {
+            std::abs(val.y) >= std::numeric_limits<T>::epsilon()) {
         nonZeroIndexFlag[col] |= 1;
         nonZeroIndexFlag[row] |= 1;
         nVis += 1 + (row != col);
